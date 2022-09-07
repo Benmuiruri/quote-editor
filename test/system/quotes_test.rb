@@ -15,7 +15,7 @@ class QuotesTest < ApplicationSystemTestCase
 
     # When we fill in the name input with "Capybara quote" and create quote we should be taken back to the index page
     fill_in 'Name', with: 'Capybara quote'
-    click_on 'Create Quote'
+    click_on 'Create quote'
     assert_selector 'h1', text: 'Quotes'
     assert_text 'Capybara quote'
   end
@@ -29,16 +29,16 @@ class QuotesTest < ApplicationSystemTestCase
 
   test "Updating a quote" do
     visit quotes_path
-    assert_selector 'h1', text: 'Quotes'
+    assert_selector "h1", text: "Quotes"
 
     click_on "Edit", match: :first
     assert_selector "h1", text: "Edit Quote"
 
-    fill_in "Name", with: "Updated quote text"
-    click_on "Update Quote"
+    fill_in "Name", with: "Updated quote"
+    click_on "Update quote"
 
     assert_selector "h1", text: "Quotes"
-    assert_text "Updated quote text"
+    assert_text "Updated quote"
   end
 
   test "Destroying a quote" do
