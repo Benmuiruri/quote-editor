@@ -2,7 +2,7 @@ require 'application_system_test_case'
 
 class QuotesTest < ApplicationSystemTestCase
   setup do
-    @quote = quotes(:first)
+    @quote = Quote.ordered.first
   end
   test 'Creating a new quote ' do
     # When we visit the Quotes#index page, we should see a list of quotes
@@ -11,11 +11,11 @@ class QuotesTest < ApplicationSystemTestCase
 
     # WHen we click on the link with the text "NEw Quote", we should be taken to a page with the title "New Quote"
     click_on 'New Quote'
-    assert_selector 'h1', text: 'New Quote'
-
-    # When we fill in the name input with "Capybara quote" and create quote we should be taken back to the index page
     fill_in 'Name', with: 'Capybara quote'
+    
+    assert_selector 'h1', text: 'Quotes'
     click_on 'Create quote'
+
     assert_selector 'h1', text: 'Quotes'
     assert_text 'Capybara quote'
   end
@@ -32,9 +32,9 @@ class QuotesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Quotes"
 
     click_on "Edit", match: :first
-    assert_selector "h1", text: "Edit Quote"
-
     fill_in "Name", with: "Updated quote"
+
+    assert_selector "h1", text: "Quotes"
     click_on "Update quote"
 
     assert_selector "h1", text: "Quotes"
