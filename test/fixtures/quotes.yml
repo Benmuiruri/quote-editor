@@ -1,8 +1,11 @@
 first:
+  company: kpmg
   name: To be or not to be
 
 second:
+  company: kpmg
   name: Ruby was created to make programmers happy
 
 third:
+  company: kpmg
   name: Rails is the best
