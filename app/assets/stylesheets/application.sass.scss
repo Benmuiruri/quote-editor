@@ -6,6 +6,8 @@
 @import "config/reset";
 
 // Components
+@import "components/flash";
+@import "config/animations";
 @import "components/navbar";
 @import "components/btn";
 @import "components/error_message";
