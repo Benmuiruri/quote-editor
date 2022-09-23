@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<main class="container">
+  <h1>Quote Editor</h1>
+  <h2>A blazing fast quote editor built with Hotwire</h2>
+
+  <% if user_signed_in? %>
+    <%= link_to "View Quotes", quotes_path, class: "btn btn--dark" %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path, class: "btn btn--dark" %>
+  <% end %>
+</main>
