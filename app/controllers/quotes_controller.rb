@@ -38,12 +38,13 @@ class QuotesController < ApplicationController
     @quote.destroy
 
     respond_to do |format|
-      format.html { redirect_to quotes_url, notice: 'Quote was successfully destroyed.' }
+      format.html { redirect_to quotes_path, notice: "Quote was successfully destroyed." }
       format.turbo_stream
     end
   end
 
   private
+
   def set_quote
     @quote = current_company.quotes.find(params[:id])
   end
