@@ -1,10 +1,10 @@
-<header>
+<header class="navbar">
   <% if user_signed_in? %>
     <div class="navbar__brand">
       Company name
     </div>
     <div class="navbar__name">
-      User name
+      <%= current_user.name %>
     </div>
     <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn--dark" %>
   <% else %>
