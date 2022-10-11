@@ -6,8 +6,10 @@ en:
     labels:
       quote:
       name: Name
-    "yes": 'Yes'
-    "no": 'No'
+      line_item_date:
+      date: Date
+    'yes': 'Yes'
+    'no': 'No'
     required:
       text: 'required'
       mark: '*'
@@ -15,13 +17,16 @@ en:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: 'Please review the problems below:'
 
   helpers:
     submit:
       quote:
         create: Create quote
         update: Update quote
+      line_item_date:
+        create: Create date
+        update: Update date
     # Examples
     # labels:
     #   defaults:
